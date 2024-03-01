@@ -2,8 +2,8 @@
 FROM ghcr.io/alexgseymour/torch-serve-arm64:latest AS builder
 
 WORKDIR /usr/app
-ADD requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+ADD requirements-arm64.txt .
+RUN pip install --no-cache-dir -r requirements-arm64.txt
 
 ADD dump_models.py .
 USER root
@@ -21,8 +21,8 @@ RUN ./scripts/create-archives.sh
 # Production image
 FROM ghcr.io/alexgseymour/torch-serve-arm64:latest
 
-ADD requirements.txt .
-RUN pip install--no-cache-dir  -r requirements.txt
+ADD requirements-arm64.txt .
+RUN pip install --no-cache-dir -r requirements-arm64.txt
 
 ADD docker/entrypoint.sh entrypoint.sh
 ADD scripts/start-torchserve.sh start-torchserve.sh
