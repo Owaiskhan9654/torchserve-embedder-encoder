@@ -1,4 +1,4 @@
-# Running all-MiniLM-L6-v2 with TorchServe 
+# Running paraphrase-multilingual-mpnet-base-v2 with TorchServe 
 
 This repository contains everything needed to deploy a production-ready service for
 computing sentence similarity embeddings using the model
