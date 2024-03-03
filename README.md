@@ -1,8 +1,8 @@
-# Running paraphrase-multilingual-mpnet-base-v2 with TorchServe 
+# Running multilingual-e5-small with TorchServe 
 
 This repository contains everything needed to deploy a production-ready service for
 computing sentence similarity embeddings using the model
-[paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) and TorchServe.
+[intfloat/multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small) and TorchServe.
 Those embeddings can then be used in combination with a vector database like Pinecone, Milvus,
 Weaviate or Qdrant.
 
@@ -23,8 +23,8 @@ There are two ways to test the server, by running it as a process or as a docker
 First, make sure you have docker installed.
 
 ```make
-docker pull ghcr.io/owaiskhan9654/paraphrase-multilingual-os:latest
-docker run -p 8080:8080 -it ghcr.io/owaiskhan9654/paraphrase-multilingual-os:latest
+docker pull ghcr.io/owaiskhan9654/multilingual-e5-small:latest
+docker run -p 8080:8080 -it ghcr.io/owaiskhan9654/multilingual-e5-small:latest
 ```
 
 Then, go to [Usage](#usage) to check how to use the service.
