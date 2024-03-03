@@ -1,8 +1,8 @@
-# Running all-MiniLM-L6-v2 with TorchServe 
+# Running paraphrase-multilingual-mpnet-base-v2 with TorchServe 
 
 This repository contains everything needed to deploy a production-ready service for
 computing sentence similarity embeddings using the model
-[all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) and TorchServe.
+[paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) and TorchServe.
 Those embeddings can then be used in combination with a vector database like Pinecone, Milvus,
 Weaviate or Qdrant.
 
@@ -11,7 +11,7 @@ for deploying a huggingface model for sentence similarity. The closest I could f
 for sequence classification, generation, question answering, and token classification as you can
 check [here](https://github.com/pytorch/serve/tree/master/examples/Huggingface_Transformers).
 
-More details about it is provided in
+More details about it are provided in
 [this article](https://medium.com/@clement.michaud/deploying-a-production-ready-embeddings-service-with-pytorch-378fb591d24e).
 
 ## Get Started
@@ -23,7 +23,8 @@ There are two ways to test the server, by running it as a process or as a docker
 First, make sure you have docker installed.
 
 ```make
-docker run -p 8080:8080 -it ghcr.io/alexgseymour/torch-serve-embedder-encoder-x86:latest
+docker pull ghcr.io/owaiskhan9654/paraphrase-multilingual-os:latest
+docker run -p 8080:8080 -it ghcr.io/owaiskhan9654/paraphrase-multilingual-os:latest
 ```
 
 Then, go to [Usage](#usage) to check how to use the service.
@@ -52,7 +53,7 @@ inferences.
 This should start a server localy that you can query with a curl like the following:
 
 ```bash
-curl --location 'http://127.0.0.1:8080/predictions/my_model' \
+curl --location 'http://127.0.0.1:8080/predictions/embedder_model_files' \
 --header 'Content-Type: application/json' \
 --data '{
     "input": ["hello, how are you?", "hi, what is up?"]
