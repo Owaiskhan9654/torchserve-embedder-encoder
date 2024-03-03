@@ -9,3 +9,4 @@ config.properties
 *.log
 **/.DS_Store
 testing.py
+.env

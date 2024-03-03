@@ -12,7 +12,7 @@ torch-model-archiver \
 --export-path model_store
 
 torch-model-archiver \
---model-name multilingual-e5-base \
+--model-name ms-marco-TinyBERT-L-2-v2 \
 --version 1.0 \
 --model-file ./cross_encoder_model_files/pytorch_model.bin \
 --handler handlers/cross_encoder/handler.py  \

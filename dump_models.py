@@ -15,8 +15,8 @@ else:
 # We can now dump the model on disk
 model.save("./embedder_model_files")
 
-question = "Hur är vädret?"
-model = CrossEncoder("intfloat/multilingual-e5-base")
+question = "how are you doing?"
+model = CrossEncoder("cross-encoder/ms-marco-TinyBERT-L-2-v2")
 inputs = [[question, sentence] for sentence in sentences]
 out = model.predict(inputs)
 print("Cross encoder is working!")
